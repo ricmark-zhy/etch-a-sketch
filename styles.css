@@ -1,0 +1,26 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: rgb(16, 14, 44);
+}
+
+.sketch-pad {
+  width: 600px;
+  height: 600px;
+  background-color: whitesmoke;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box {
+  border: 1px solid black;
+  flex-grow: 16;
+  /* width: 37.5px;
+  height: 37.5px; */
+}
