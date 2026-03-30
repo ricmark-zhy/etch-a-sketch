@@ -8,11 +8,22 @@
 
 body{
   background-color: rgb(16, 14, 44);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 8px;
+}
+
+form{
+  display: flex;
+  gap: 8px;
 }
 
 .sketch-pad {
-  width: 600px;
-  height: 600px;
+  width: 500px;
+  height: 500px;
   background-color: whitesmoke;
   display: flex;
   flex-wrap: wrap;
@@ -20,7 +31,27 @@ body{
 
 .box {
   border: 1px solid black;
-  flex-grow: 16;
+  flex-grow: 0;
   /* width: 37.5px;
   height: 37.5px; */
 }
+
+#size_label{
+  color: white;
+}
+
+#size_input {
+  width: 42px;
+  text-align: right;
+}
+
+form label{
+  color: white;
+  align-self: center;
+}
+
+#generate {
+  padding: 1px 12px;
+}
+
+
