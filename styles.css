@@ -62,7 +62,7 @@ form {
 }
 
 #mode_help_button:hover {
-  outline: auto;
+  outline: gray auto;
 }
 
 .help-button-container{
@@ -77,7 +77,7 @@ form {
   padding: 8px;
   border-radius: 4px;
   color: gray;
-  outline: auto black;
+  outline: auto gray;
   /* outline-color: black; */
   display: none;
 
@@ -96,7 +96,7 @@ form {
 }
 
 .box {
-  border: 1px solid black;
+  outline: 1px solid green;
   flex-grow: 0;
   /* width: 37.5px;
   height: 37.5px; */
