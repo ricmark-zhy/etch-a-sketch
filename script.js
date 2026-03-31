@@ -4,9 +4,9 @@ const generate_button = document.querySelector('#generate');
 const sizeInput = document.querySelector('#size_input');
 const mode_help_button = document.querySelector('#mode_help_button');
 const help_popup = document.querySelector('#help_popup')
-let grid = 16;
 
-generateGrid(grid);
+let grid = 16;
+generateGrid(grid); //initialized
 
 mode_help_button.addEventListener('mouseenter', () => {
   help_popup.classList.add('show');
@@ -37,6 +37,7 @@ generate_button.addEventListener('click', (event) => {
 function generateGrid(gridSize) {
   let count = 0;
   let boxCount = gridSize * gridSize;
+
   for (let i = 0; i < boxCount; i++) {
 
     let boxSize = String(500 / grid);
@@ -51,7 +52,6 @@ function generateGrid(gridSize) {
       console.log(typeof boxSize === "string");
 
     }
-    count++;
   }
   console.log(count);
 }
