@@ -6,6 +6,10 @@ const mode_help_button = document.querySelector('#mode_help_button');
 const help_popup = document.querySelector('#help_popup')
 const mode_text = document.querySelector('#mode_text');
 
+const sketch_pad_size = 514;
+
+sketch_pad.style.width = `${sketch_pad_size}px`;
+sketch_pad.style.height = `${sketch_pad_size}px`;
 let gridSize = 16;
 generateGrid(gridSize); //initialized grid
 
@@ -91,7 +95,7 @@ generate_button.addEventListener('mousedown', (event) => {
 function generateGrid(gridSize) {
   
   let boxCount = gridSize * gridSize;
-  let boxSize = String(500 / gridSize);
+  let boxSize = String(sketch_pad_size / gridSize);
   
   for (let i = 0; i < boxCount; i++) {
     const box = document.createElement("div");
