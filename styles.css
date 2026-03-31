@@ -13,6 +13,7 @@ body{
   justify-content: center;
   align-items: center;
   height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 main {
@@ -32,14 +33,20 @@ form {
   display: flex;
   justify-content: space-between;
   gap: 20px;
+  font-size: 14px;
 }
 
-#mode{
+#mode_text{
   text-align: center;
   color: gray;
+  cursor: default;
 }
 
-#mode_help {
+#mode_text:focus{
+  outline: none;
+}
+
+#mode_help_button {
   width: 20px;
   height: 20px;
   display: flex;
@@ -49,8 +56,35 @@ form {
   color: rgb(63, 63, 63);
   border-radius: 50%;
   line-height: 20px;
-  border: solid 1px gray;
+  /* border: solid 1px gray; */
   cursor: pointer;
+  border: gray solid 1px;
+}
+
+#mode_help_button:hover {
+  outline: auto;
+}
+
+.help-button-container{
+  position: relative;
+}
+
+.help-popup {
+  position: absolute;
+  background-color: white;
+  width: max-content;
+  margin-top: 8px;
+  padding: 8px;
+  border-radius: 4px;
+  color: gray;
+  outline: auto black;
+  /* outline-color: black; */
+  display: none;
+
+}
+
+.help-popup.show{
+  display: block;
 }
 
 .sketch-pad {

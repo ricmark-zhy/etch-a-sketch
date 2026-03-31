@@ -13,8 +13,15 @@
     <div class="top-menu-container">
       <form>
         <label for="mode">Mode</label>
-        <input type="text" id="mode" placeholder="View" value="View" size="2" readonly>
-        <button type="button" id="mode_help">?</button>
+        <input type="text" id="mode_text" placeholder="View" value="View" size="2" readonly>
+        <div class="help-button-container">
+          <button type="button" id="mode_help_button">?</button>
+          <div class="help-popup" id="help_popup">
+            <p>Press D, draw mode</p>
+            <p>Press S, erase mode</p>
+            <p>Press A, view mode</p>
+          </div>
+        </div>
       </form>
       <form>
         <label for="grid-size" id="size_label"><span>(Min:16 Max:100 )</span></label>
@@ -27,7 +34,7 @@
     <div class="sketch-pad" id="sketch_pad"></div>
 
   </main>
-  
+
   <script src="script.js"></script>
 </body>
 </html>
