@@ -31,7 +31,7 @@ sketch_pad.addEventListener('mousemove', (event) => {
     if (isPainted(target)) {
       return;
     }
-    
+
     paintBox(target);
   } else if (actionMode(mode_text) === "Erase") {
     clearBox(target);
@@ -111,7 +111,7 @@ function generateGrid(gridSize) {
   
 }
 
-function generateRandomColor(){
+let generateRandomColor = () => {
   const red = Math.floor(Math.random() * 256);
   const green = Math.floor(Math.random() * 256);
   const blue = Math.floor(Math.random() * 256);
