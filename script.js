@@ -24,12 +24,16 @@ const actionMode = (mode) => {
 }
 
 sketch_pad.addEventListener('mousemove', (event) => {
-  
+
   let target = event.target;
   
   if (actionMode(mode_text) === "Paint") {
-    paintBox(event.target, "black");
-  } else if (actionMode(mode_text) === 'Erase') {
+    if (isPainted(target)) {
+      return;
+    }
+    
+    paintBox(target);
+  } else if (actionMode(mode_text) === "Erase") {
     clearBox(target);
   }
 })
@@ -39,13 +43,14 @@ sketch_pad.addEventListener('mousedown', (event) => {
   let target = event.target;
 
   if (actionMode(mode_text) === "Paint") {
-    paintBox(target, "black");
+    paintBox(target);
   } else if (actionMode(mode_text) === 'Erase') {
     clearBox(target);
   }
 })
 
-function paintBox(target, color){
+function paintBox(target){
+  let color = generateRandomColor();
   target.style.backgroundColor = `${color}`;
   target.style.outline = `${color} solid 1px`;
 }
@@ -104,6 +109,22 @@ function generateGrid(gridSize) {
     sketch_pad.appendChild(box);
   }
   
+}
+
+function generateRandomColor(){
+  const red = Math.floor(Math.random() * 256);
+  const green = Math.floor(Math.random() * 256);
+  const blue = Math.floor(Math.random() * 256);
+
+  return `rgb(${red} ${green} ${blue})`;
+}
+
+function isPainted (target){
+  if (target.style.backgroundColor){
+    return true;
+  } else {
+    return false;
+  }
 }
 
 
