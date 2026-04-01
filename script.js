@@ -52,13 +52,10 @@ sketch_pad.addEventListener('mousedown', (event) => {
 function paintBox(target){
   let color = generateRandomColor();
   target.style.backgroundColor = `${color}`;
-  // target.style.borderTop = `${color} solid 1px`;
-  // target.style.borderBottom = `${color} solid 1px`;
 }
 
 function clearBox(target){
   target.style.backgroundColor = '';
-  target.style.border = 'green solid 1px';
 }
 
 document.addEventListener('keyup', (event) => {
