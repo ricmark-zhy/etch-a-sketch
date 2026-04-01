@@ -52,12 +52,13 @@ sketch_pad.addEventListener('mousedown', (event) => {
 function paintBox(target){
   let color = generateRandomColor();
   target.style.backgroundColor = `${color}`;
-  target.style.outline = `${color} solid 1px`;
+  // target.style.borderTop = `${color} solid 1px`;
+  // target.style.borderBottom = `${color} solid 1px`;
 }
 
 function clearBox(target){
   target.style.backgroundColor = '';
-  target.style.outline = 'green solid 1px';
+  target.style.border = 'green solid 1px';
 }
 
 document.addEventListener('keyup', (event) => {
@@ -97,7 +98,7 @@ function generateGrid(gridSize) {
   for (let i = 0; i < boxCount; i++) {
     const box = document.createElement("div");
 
-    box.setAttribute('style', `width:${boxSize}px; height:${boxSize}px; outline: 1px solid green`)
+    box.setAttribute('style', `width:${boxSize}px; height:${boxSize}px; border-bottom: 1px solid green; border-right: 1px solid green`)
     sketch_pad.appendChild(box);
   }
   
