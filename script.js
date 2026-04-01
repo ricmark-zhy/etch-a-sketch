@@ -43,12 +43,17 @@ sketch_pad.addEventListener('mousemove', (event) => {
   let target = event.target;
   
   if (actionMode(mode_text) === "Paint") {
-    if (isPainted(target)) {
+    if (target.style.backgroundColor) {
       return;
     }
-
+    console.log('painting');
     paintBox(target);
   } else if (actionMode(mode_text) === "Erase") {
+
+    if (target.style.backgroundColor === ''){
+      return;
+    }
+    console.log('erasing');
     clearBox(target);
   }
 })
@@ -128,16 +133,6 @@ let generateRandomColor = () => {
 
   return `rgb(${red} ${green} ${blue})`;
 }
-
-function isPainted (target){
-  if (target.style.backgroundColor){
-    return true;
-  } else {
-    return false;
-  }
-}
-
-
 //todo
 // add pop up on what does the mode do <done>
 // add a color mode (black, random, gradual darken)
