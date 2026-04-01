@@ -3,15 +3,30 @@ const sketch_pad = document.querySelector('#sketch_pad');
 const generate_button = document.querySelector('#generate');
 const sizeInput = document.querySelector('#size_input');
 const mode_help_button = document.querySelector('#mode_help_button');
-const help_popup = document.querySelector('#help_popup')
+const help_popup = document.querySelector('#help_popup');
 const mode_text = document.querySelector('#mode_text');
+const toggle_grid = document.querySelector('#toggle_grid');
 
 const sketch_pad_size = 514;
 
 sketch_pad.style.width = `${sketch_pad_size}px`;
 sketch_pad.style.height = `${sketch_pad_size}px`;
+
 let gridSize = 16;
 generateGrid(gridSize); //initialized grid
+
+const boxes = document.querySelectorAll('.box');
+console.log(boxes);
+
+toggle_grid.addEventListener('click', () => {
+  const boxes = sketch_pad.children;
+  const boxesArr = Array.from(boxes);
+  if (!toggle_grid.checked){
+    boxesArr.forEach( box => box.classList.remove('box-grid'));
+  } else {
+    boxesArr.forEach( box => box.classList.add('box-grid'));
+  }
+})
 
 const actionMode = (mode) => {
   if (mode.value === 'Paint'){
@@ -95,8 +110,13 @@ function generateGrid(gridSize) {
   for (let i = 0; i < boxCount; i++) {
     const box = document.createElement("div");
 
-    box.setAttribute('style', `width:${boxSize}px; height:${boxSize}px; border-bottom: 1px solid green; border-right: 1px solid green`)
+    box.setAttribute('style', `width:${boxSize}px; height:${boxSize}px;`);
+
+    if (toggle_grid.checked) {
+      box.classList.add('box-grid');
+    }
     sketch_pad.appendChild(box);
+
   }
   
 }

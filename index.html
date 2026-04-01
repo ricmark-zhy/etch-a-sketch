@@ -23,8 +23,15 @@
     <!-- grid top buttons -->
     <div class="top-menu-container">
       <form>
-        <label for="mode_text">Mode</label>
-        <input type="text" id="mode_text" placeholder="View" value="View" size="2" readonly>
+        <div class="button-container">
+          <label for="mode_text">Mode</label>
+          <input type="text" id="mode_text" placeholder="View" value="View" size="2" readonly>
+        </div>
+        <div class="button-container">
+          <label for="toggle_grid">Grid Lines</label>
+          <input type="checkbox" id="toggle_grid" checked>
+        </div>
+       
       </form>
       <form>
         <label for="size_input" id="size_label"><span>(Min:16 Max:100)</span></label>

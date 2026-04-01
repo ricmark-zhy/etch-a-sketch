@@ -7,7 +7,7 @@
 }
 
 body{
-  background-color: #2b2c48;
+  background-color: #1e205f;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -74,45 +74,17 @@ form {
   outline: none;
 }
 
-#mode_help_button {
-  width: 20px;
-  height: 20px;
+.button-container{
   display: flex;
-  justify-content: center;
   align-items: center;
-  font-weight: 600;
-  color: rgb(63, 63, 63);
-  border-radius: 50%;
-  line-height: 20px;
-  /* border: solid 1px gray; */
+  gap: 5px;
+}
+
+#toggle_grid{
   cursor: pointer;
-  border: gray solid 1px;
-}
-
-#mode_help_button:hover {
-  outline: gray auto;
-}
-
-.help-button-container{
-  position: relative;
-}
-
-.help-popup {
-  position: absolute;
-  background-color: white;
-  width: max-content;
-  margin-top: 8px;
-  padding: 8px;
-  border-radius: 4px;
-  color: gray;
-  outline: auto gray;
-  /* outline-color: black; */
-  display: none;
-
-}
-
-.help-popup.show{
-  display: block;
+  accent-color: darkgreen;
+  width: 16px;
+  height: 16px;
 }
 
 .sketch-pad {
@@ -123,11 +95,9 @@ form {
   flex-wrap: wrap;
 }
 
-.box {
-  outline: 1px solid green;
-  flex-grow: 0;
-  /* width: 37.5px;
-  height: 37.5px; */
+.box-grid{
+  border-bottom: 1px solid green;
+  border-right: 1px solid green;
 }
 
 #size_label{
