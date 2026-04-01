@@ -70,14 +70,6 @@ document.addEventListener('keyup', (event) => {
   }
 });
 
-mode_help_button.addEventListener('mouseenter', () => {
-  help_popup.classList.add('show');
-});
-
-mode_help_button.addEventListener('mouseleave', () => {
-  help_popup.classList.remove('show');
-});
-
 generate_button.addEventListener('mousedown', (event) => {
   event.preventDefault();
   gridSize = Number(sizeInput.value);

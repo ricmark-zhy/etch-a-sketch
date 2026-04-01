@@ -7,6 +7,14 @@
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
+  <div class="sidebar-container">
+    <h2>Help</h2>
+    <ul>
+      <li><p>Press A, View mode</p></li>
+      <li><p>Press D, Paint mode</p></li>
+      <li><p>Press S, Erase mode</p></li>
+    </ul>
+  </div>
   <header>
     <h1>Etch A Sketch </h1>
   </header>
@@ -17,14 +25,6 @@
       <form>
         <label for="mode_text">Mode</label>
         <input type="text" id="mode_text" placeholder="View" value="View" size="2" readonly>
-        <div class="help-button-container">
-          <button type="button" id="mode_help_button">?</button>
-          <div class="help-popup" id="help_popup">
-            <p>Press D, Paint mode</p>
-            <p>Press S, Erase mode</p>
-            <p>Press A, View mode</p>
-          </div>
-        </div>
       </form>
       <form>
         <label for="size_input" id="size_label"><span>(Min:16 Max:100)</span></label>
@@ -37,7 +37,6 @@
     <div class="sketch-pad" id="sketch_pad"></div>
 
   </main>
-
   <footer>
     &copy Ric Mark J.
   </footer>
